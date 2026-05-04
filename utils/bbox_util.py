@@ -7,3 +7,7 @@ def get_bbox_width(bbox):
 
 def get_distance(pts1, pts2):
     return ((pts1[0]-pts2[0])**2 + (pts1[1]-pts2[1])**2)**0.5
+
+def get_foot_position(bbox):
+    x1, y1, x2, y2 = bbox
+    return int((x1+x2)/2), int(y2)

@@ -5,6 +5,15 @@ __pycache__/
 
 # C extensions
 *.so
+/.vscode
+/football-players-detection-1/
+/input_video
+/output_video
+/runs
+/stubs
+/training_detection
+best.pt
+output.avi
 
 # Distribution / packaging
 .Python

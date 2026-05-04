@@ -5,12 +5,27 @@ import os
 import cv2
 import numpy as np
 import pandas as pd
-
+import sys
+sys.path.append('../')
+from utils import get_center, get_foot_position
 
 class Tracker:
     def __init__(self, model_path):
         self.model = YOLO(model_path)
-        self.tracker = sv.ByteTrack()
+        self.tracker = sv.ByteTrack(        
+            lost_track_buffer=120,          
+        )
+
+    def add_position_to_track(self, tracks):
+        for obj, obj_track in tracks.items():
+            for frame_num, track in enumerate(obj_track):
+                for track_id, track_info in track.items():
+                    bbox = track_info['bbox']
+                    if obj == 'ball':
+                        position = get_center(bbox)
+                    else:
+                        position = get_foot_position(bbox)
+                    tracks[obj][frame_num][track_id]['position'] = position
 
     def interpolate_ball_positions(self, ball_positions):
         ball_positions = [x.get(1, {}).get('bbox', []) for x in ball_positions]
@@ -121,9 +136,9 @@ class Tracker:
             )
             if track_id < 10:
                 x1_text = x1_rect + 12
-            if track_id > 9 and track_id < 100:
+            elif track_id < 100:
                 x1_text = x1_rect + 7
-            elif track_id > 100:
+            else:                      
                 x1_text = x1_rect + 2
             
             cv2.putText(
@@ -215,9 +230,5 @@ class Tracker:
             output.append(frame)
         
         return output
-
-
-                
-
 
 
