@@ -4,7 +4,7 @@ Hệ thống ứng dụng Computer Vision và Deep Learning để phân tích vi
 
 ## Demo Hệ Thống
 
-## [![Watch Demo](https://youtu.be/v8cuC_662gA/0.jpg)](https://youtu.be/v8cuC_662gA)
+## [![Watch Demo](https://img.youtube.com/vi/v8cuC_662gA/0.jpg)](https://youtu.be/v8cuC_662gA)
 
 ## Các tính năng chính
 
@@ -24,18 +24,18 @@ Hệ thống ứng dụng Computer Vision và Deep Learning để phân tích vi
 
 ## Cấu trúc dự án
 
-├── input_video/ # Thư mục chứa video đầu vào
-├── output_video/ # Thư mục chứa video kết quả sau khi render
-├── stubs/ # Nơi lưu trữ file pickle (cache tracking/camera movement để tiết kiệm thời gian chạy lại)
-├── camera_movement_estimator.py # Tính toán và bù trừ chuyển động của camera (Optical Flow)
-├── main.py # File thực thi chính, kết nối toàn bộ pipeline
-├── player_ball_assigner.py # Logic gán quả bóng cho cầu thủ đang kiểm soát
-├── post_processor.py # Xử lý nội suy, vá lỗi mất track và ID swap
-├── speed_and_distance_estimator.py # Tính toán quãng đường và tốc độ dựa trên tọa độ thực
-├── team_assigner.py # Phân cụm cầu thủ theo đội dựa trên màu sắc (KMeans)
-├── tracker.py # Khởi tạo YOLO, ByteTrack và các hàm vẽ Bounding Box/Đồ họa
-├── view_transformer.py # Chuyển đổi tọa độ Pixel -> Tọa độ sân đấu thực
-└── utils.py # Các hàm tiện ích (đọc/ghi video, tính khoảng cách...)
+- **input_video/**: Thư mục chứa video đầu vào
+- **output_video/**: Thư mục chứa video kết quả sau khi render
+- **stubs/**: Nơi lưu trữ file pickle (cache tracking/camera movement để tiết kiệm thời gian chạy lại)
+- **camera_movement_estimator.py**: Tính toán và bù trừ chuyển động của camera (Optical Flow)
+- **main.py**: File thực thi chính, kết nối toàn bộ pipeline
+- **player_ball_assigner.py**: Logic gán quả bóng cho cầu thủ đang kiểm soát
+- **post_processor.py**: Xử lý nội suy, vá lỗi mất track và ID swap
+- **speed_and_distance_estimator.py**: Tính toán quãng đường và tốc độ dựa trên tọa độ thực
+- **team_assigner.py**: Phân cụm cầu thủ theo đội dựa trên màu sắc (KMeans)
+- **tracker.py**: Khởi tạo YOLO, ByteTrack và các hàm vẽ Bounding Box/Đồ họa
+- **view_transformer.py**: Chuyển đổi tọa độ Pixel -> Tọa độ sân đấu thực
+- **utils.py**: Các hàm tiện ích (đọc/ghi video, tính khoảng cách...)
 
 ## Công nghệ sử dụng
 
