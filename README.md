@@ -76,3 +76,9 @@ python main.py
 ### 4. Kết quả đầu ra
 
 Video sau khi đã vẽ các annotation (vòng elip dưới chân cầu thủ, tam giác trên đầu người giữ bóng, vận tốc, tổng quãng đường và bảng thống kê tỷ lệ giữ bóng) sẽ được lưu tại output_video/output.avi.
+
+## Acknowledgments
+
+Dự án này được hoàn thiện nhờ những kiến thức và nền tảng cốt lõi học được từ **Abdullah Tarek**. Quá trình theo dõi, gán nhãn đội bóng và xử lý perspective transform đã được truyền cảm hứng rất nhiều từ các hướng dẫn của anh.
+
+* **Reference Tutorial:** [https://www.youtube.com/watch?v=neBZ6huolkg&t=79s]
